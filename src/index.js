@@ -82,7 +82,7 @@ export const FormGenerator = (props) => {
   if (type === "password") {
     const {
       onChange,
-      data,
+      value,
       name,
       placeholder,
       Fieldstyle,
@@ -99,7 +99,7 @@ export const FormGenerator = (props) => {
             type={type}
             style={Fieldstyle}
             className={FieldclassName}
-            value={data}
+            value={value}
             onChange={onChange}
           />
         </Form.Item>
@@ -113,7 +113,7 @@ export const FormGenerator = (props) => {
   }
 
   if (type === "number") {
-    const { onChange, data, name, min, max, disabled } = props;
+    const { onChange, value, name, min, max, disabled } = props;
     return (
       <React.Fragment>
         <Form.Item label={name}>
@@ -125,7 +125,7 @@ export const FormGenerator = (props) => {
             type={type}
             max={max}
             disabled={disabled}
-            value={typeof data === "number" ? data : 0}
+            value={typeof value === "number" ? value : 0}
             onChange={onChange}
           />
         </Form.Item>
@@ -134,12 +134,12 @@ export const FormGenerator = (props) => {
   }
 
   if (type === "textarea") {
-    const { onChange, data, name, autoSize, placeholder } = props;
+    const { onChange, value, name, autoSize, placeholder } = props;
     return (
       <React.Fragment>
         <Form.Item label={name}>
           <TextArea
-            value={data}
+            value={value}
             onChange={onChange}
             placeholder={placeholder}
             autoSize={autoSize}
