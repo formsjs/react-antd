@@ -1,10 +1,37 @@
-import React from 'react'
+import React, {useState} from 'react'
 
-import { ExampleComponent } from '@formjs/react-antd'
-import '@formjs/react-antd/dist/index.css'
+import DynamicForm from '@formsjs/react-antd'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  const [firstName, setFirstName] = useState("")
+  const [lastName, setLastName] = useState("")
+
+  const script = [
+    [
+      {
+        type: 'text',
+        name: 'First Name',
+        value: firstName,
+        onChange: (event) => {
+          setFirstName(event.target.value)
+        }
+      },
+      {
+        type: 'text',
+        name: 'Last Name',
+        value: lastName,
+        onChange: (event) => {
+          setLastName(event.target.value)
+        }
+      }
+    ]
+  ]
+
+  return (
+    <div className="w-100 p-5">
+      <DynamicForm script={script}/>
+    </div>
+  )
 }
 
 export default App

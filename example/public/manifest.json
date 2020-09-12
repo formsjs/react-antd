@@ -1,6 +1,6 @@
 {
-  "short_name": "@formjs/react-antd",
-  "name": "@formjs/react-antd",
+  "short_name": "@formsjs/react-antd",
+  "name": "@formsjs/react-antd",
   "icons": [
     {
       "src": "favicon.ico",
