@@ -4,7 +4,10 @@
   "description": "Made with create-react-library",
   "author": "mustafasheikh1",
   "license": "MIT",
-  "repository": "formsjs/react-antd",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/formsjs/react-antd.git"
+  },
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.js",
@@ -54,5 +57,15 @@
     "antd": "^4.6.3",
     "moment": "^2.27.0",
     "@ant-design/icons": "^4.2.2"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/formsjs/react-antd/issues"
+  },
+  "homepage": "https://github.com/formsjs/react-antd#readme",
+  "directories": {
+    "example": "example"
+  },
+  "keywords": [
+    "forms"
+  ]
 }

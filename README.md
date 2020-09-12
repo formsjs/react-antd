@@ -2,27 +2,54 @@
 
 > Made with create-react-library
 
-[![NPM](https://img.shields.io/npm/v/@formjs/react-antd.svg)](https://www.npmjs.com/package/@formjs/react-antd) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/@formjs/react-antd.svg)](https://www.npmjs.com/package/@formsjs/react-antd) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
 ```bash
-npm install --save @formjs/react-antd
+npm install --save @formsjs/react-antd
 ```
 
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+import React, {useState} from 'react'
 
-import MyComponent from '@formjs/react-antd'
-import '@formjs/react-antd/dist/index.css'
+import DynamicForm from '@formsjs/react-antd'
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+const App = () => {
+  const [firstName, setFirstName] = useState("")
+  const [lastName, setLastName] = useState("")
+
+  const script = [
+    [
+      {
+        type: 'text',
+        name: 'First Name',
+        value: firstName,
+        onChange: (event) => {
+          setFirstName(event.target.value)
+        }
+      },
+      {
+        type: 'text',
+        name: 'Last Name',
+        value: lastName,
+        onChange: (event) => {
+          setLastName(event.target.value)
+        }
+      }
+    ]
+  ]
+
+  return (
+    <div className="w-100 p-5">
+      <DynamicForm script={script}/>
+    </div>
+  )
 }
+
+export default App
 ```
 
 ## License
