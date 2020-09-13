@@ -52,8 +52,6 @@ const App = () => {
 export default App
 ```
 
-
-
 ## Types
 
 - [Text](#text)
@@ -69,18 +67,16 @@ export default App
 - Dropbox
 - Custom
 
-
-
 ### Text
 
 ```jsx
 {
-  		type: 'text',
-      name: 'First Name',
-    	value: firstName,
-    	onChange: (event) => {
-      	setFirstName(event.target.value)
-   		}
+  type: 'text',
+  name: 'First Name',
+  value: firstName,
+  onChange: (event) => {
+    setFirstName(event.target.value)
+  }
 }
 ```
 
@@ -88,18 +84,14 @@ export default App
 
 ```jsx
 {
-  	placeholder: "First Name",                       // For placeholders
-    fieldStyle: {fontSize: 12},                      // For custom Style Injections
-    fieldClassName: "text-left font-weight-bold",    // For custom css class injection
-    customLable: <label>Required</label>,            // For small labels on top
-    fieldId: "my-id",                                // For custom css id's
-    disabled: false                                  // For disabling the field
+  placeholder: "First Name",                 // For placeholders
+  fieldStyle: {fontSize: 12},                // For custom Style Injections
+  fieldClassName: "font-weight-bold",        // For custom css class injection
+  customLable: <label>Required</label>,      // For small labels on top
+  fieldId: "my-id",                          // For custom css id's
+  disabled: false                            // For disabling the field
 }
 ```
-
-
-
-
 
 ## License
 
