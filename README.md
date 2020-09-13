@@ -55,7 +55,7 @@ export default App
 ## Types
 
 - [Text](#text)
-- Number
+- [Number](#password)
 - Date
 - Password
 - Textarea
@@ -80,7 +80,7 @@ export default App
 }
 ```
 
-#### Optional Props
+#### Optional Props (Text)
 
 ```jsx
 {
@@ -92,6 +92,46 @@ export default App
   disabled: false                            // For disabling the field
   colClassName: "text-right",                // For Column Level styles
   rowClassName: "mb-0",                      // For Row Level styles
+  bottomElement: <label>Bottom Element</label>,
+  /*
+    Any JSX element that you may like at the bottom
+  */
+  lg: 24,
+  /*
+    lg: 1 to 24 or { span: 11, offset: 1 }
+    Just like antd grid System
+  */
+}
+```
+
+### Password
+
+```jsx
+{
+  type: 'password',
+  name: 'Password',
+  value: password,
+  onChange: (event) => {
+    setPassword(event.target.value)
+  }
+}
+```
+
+#### Optional Props (Password)
+
+```jsx
+{
+  placeholder: "First Name",                 // For placeholders
+  fieldStyle: {fontSize: 12},                // For custom Style Injections
+  fieldClassName: "font-weight-bold",        // For custom css class injection
+  customLable: <label>Required</label>,      // For small labels on top
+  disabled: false                            // For disabling the field
+  colClassName: "text-right",                // For Column Level styles
+  rowClassName: "mb-0",                      // For Row Level styles
+  bottomElement: <label>Bottom Element</label>,
+  /*
+    Any JSX element that you may like at the bottom
+  */
   lg: 24,
   /*
     lg: 1 to 24 or { span: 11, offset: 1 }

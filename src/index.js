@@ -85,9 +85,10 @@ export const FormGenerator = (props) => {
       value,
       name,
       placeholder,
-      Fieldstyle,
-      FieldclassName,
+      fieldStyle,
+      fieldClassName,
       customLable,
+      disabled
     } = props;
     return (
       <React.Fragment>
@@ -97,10 +98,11 @@ export const FormGenerator = (props) => {
             placeholder={placeholder ? placeholder : name}
             name={name}
             type={type}
-            style={Fieldstyle}
-            className={FieldclassName}
+            style={fieldStyle}
+            className={fieldClassName}
             value={value}
             onChange={onChange}
+            disabled={disabled}
           />
         </Form.Item>
         {bottomElement ? (
