@@ -73,6 +73,30 @@ export default App
 
 ### Text
 
+```jsx
+{
+  		type: 'text',
+      name: 'First Name',
+    	value: firstName,
+    	onChange: (event) => {
+      	setFirstName(event.target.value)
+   		}
+}
+```
+
+#### Optional Props
+
+```jsx
+{
+  	placeholder: "First Name",                       // For placeholders
+    fieldStyle: {fontSize: 12},                      // For custom Style Injections
+    fieldClassName: "text-left font-weight-bold",    // For custom css class injection
+    customLable: <label>Required</label>,            // For small labels on top
+    fieldId: "my-id",                                // For custom css id's
+    disabled: false                                  // For disabling the field
+}
+```
+
 
 
 

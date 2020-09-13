@@ -49,8 +49,8 @@ export const FormGenerator = (props) => {
       value,
       name,
       placeholder,
-      Fieldstyle,
-      FieldclassName,
+      fieldStyle,
+      fieldClassName,
       customLable,
       fieldId,
       disabled
@@ -62,8 +62,8 @@ export const FormGenerator = (props) => {
           <Input
             placeholder={placeholder ? placeholder : name}
             name={name}
-            style={Fieldstyle}
-            className={FieldclassName}
+            style={fieldStyle}
+            className={fieldClassName}
             value={value}
             onChange={onChange}
             id={fieldId}
