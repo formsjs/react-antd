@@ -20,6 +20,8 @@ import DynamicForm from '@formsjs/react-antd'
 const App = () => {
   const [firstName, setFirstName] = useState("")
   const [lastName, setLastName] = useState("")
+  const [age, setAge] = useState(0)
+  const [message, setMessage] = useState("")
 
   const script = [
     [
@@ -37,6 +39,24 @@ const App = () => {
         value: lastName,
         onChange: (event) => {
           setLastName(event.target.value)
+        }
+      }
+    ],
+    [
+      {
+        type: 'number',
+        name: 'Age',
+        value: age,
+        onChange: (value) => {
+          setAge(value)
+        }
+      },
+      {
+        type: 'textarea',
+        name: 'Message',
+        value: message,
+        onChange: (event) => {
+          setMessage(event.target.value)
         }
       }
     ]

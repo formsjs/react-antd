@@ -325,7 +325,7 @@ const DynamicForm = ({ script, layout }) => {
     <Form layout={ layout ? layout: "vertical"}>
       {script.map((row, key_) => {
         return (
-          <Row key={key_} className={col.rowClassName ? col.rowClassName : ""}>
+          <Row key={key_}>
             {row.map((col, key) => {
               return (
                 <Col
