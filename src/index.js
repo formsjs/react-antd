@@ -318,12 +318,12 @@ export const FormGenerator = (props) => {
   return <React.Fragment></React.Fragment>;
 };
 
-const DynamicForm = ({ script }) => {
+const DynamicForm = ({ script, layout }) => {
   return (
-    <Form layout={"vertical"}>
+    <Form layout={ layout ? layout: "vertical"}>
       {script.map((row, key_) => {
         return (
-          <Row key={key_}>
+          <Row key={key_} className={col.rowClassName ? col.rowClassName : ""}>
             {row.map((col, key) => {
               return (
                 <Col
@@ -332,7 +332,7 @@ const DynamicForm = ({ script }) => {
                   sm={24}
                   md={24}
                   xs={24}
-                  className={col.className ? col.className : "text-left"}
+                  className={col.colClassName ? col.className : "text-left"}
                 >
                   <FormGenerator {...col} />
                 </Col>

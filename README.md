@@ -90,6 +90,13 @@ export default App
   customLable: <label>Required</label>,      // For small labels on top
   fieldId: "my-id",                          // For custom css id's
   disabled: false                            // For disabling the field
+  colClassName: "text-right",                // For Column Level styles
+  rowClassName: "mb-0",                      // For Row Level styles
+  lg: 24,
+  /*
+    lg: 1 to 24 or { span: 11, offset: 1 }
+    Just like antd grid System
+  */
 }
 ```
 
