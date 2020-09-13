@@ -55,9 +55,9 @@ export default App
 ## Types
 
 - [Text](#text)
-- [Number](#password)
+- [Password](#password)
 - Date
-- Password
+- Number
 - Textarea
 - Upload
 - Checkbox
