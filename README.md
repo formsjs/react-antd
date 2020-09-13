@@ -1,6 +1,6 @@
 # @formsjs/react-antd
 
-> A Dynamic Form Generating library for all who hate creating forms
+> A Dynamic Form Generating library based in antd for all who hate creating forms
 
 [![NPM](https://img.shields.io/npm/v/@formjs/react-antd.svg)](https://www.npmjs.com/package/@formsjs/react-antd) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
@@ -51,6 +51,31 @@ const App = () => {
 
 export default App
 ```
+
+
+
+## Types
+
+- [Text](#text)
+- Number
+- Date
+- Password
+- Textarea
+- Upload
+- Checkbox
+- Radio
+- Select
+- Boolean
+- Dropbox
+- Custom
+
+
+
+### Text
+
+
+
+
 
 ## License
 

@@ -173,7 +173,7 @@ export const FormGenerator = (props) => {
     );
   }
 
-  if (type === "uploadDrop") {
+  if (type === "dropBox") {
     const { name, onRemove, onSelect } = props;
     return (
       <Form.Item label={name}>
