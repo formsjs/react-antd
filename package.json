@@ -66,6 +66,9 @@
     "example": "example"
   },
   "keywords": [
-    "forms"
+    "forms",
+    "antd",
+    "dynamic froms",
+    "react forms"
   ]
 }
