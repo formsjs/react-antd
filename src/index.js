@@ -19,24 +19,35 @@ import "antd/dist/antd.css";
 const { Dragger } = Upload;
 const { TextArea } = Input;
 
-const dateFormat = ["DD/MM/YYYY", "DD/MM/YY"];
+const _dateFormat = ["DD/MM/YYYY", "DD/MM/YY"];
 
 export const FormGenerator = (props) => {
   const { type, bottomElement } = props;
 
   if (props.type === "date") {
-    const { onChange, data, name } = props;
+    const {
+      onChange,
+      value,
+      name,
+      disabled,
+      placeholder,
+      formate,
+      fieldClassName,
+      fieldStyle
+    } = props;
     return (
       <Form.Item label={name} className="w-100">
         <DatePicker
           name={name}
           size="large"
-          format={dateFormat}
-          placeholder="DD/MM/YYYY"
-          className="w-100"
+          format={formate ? formate: _dateFormat}
+          placeholder={placeholder ? placeholder : "DD/MM/YYYY"}
+          className={fieldClassName ? fieldClassName : "w-100"}
+          style={fieldStyle}
+          disabled={disabled}
           onChange={onChange}
           value={
-            data ? moment(data, dateFormat[0]): ""
+            value ? moment(value, formate ? formate[0] : _dateFormat[0]): ""
           }
         />
       </Form.Item>

@@ -7,6 +7,7 @@ const App = () => {
   const [lastName, setLastName] = useState("")
   const [age, setAge] = useState(0)
   const [message, setMessage] = useState("")
+  const [dob, setDob] = useState(new Date())
 
   const script = [
     [
@@ -14,6 +15,7 @@ const App = () => {
         type: 'text',
         name: 'First Name',
         value: firstName,
+        lg: {span: 7},
         onChange: (event) => {
           setFirstName(event.target.value)
         }
@@ -21,24 +23,36 @@ const App = () => {
       {
         type: 'text',
         name: 'Last Name',
+        lg: {span: 7, offset: 1},
         value: lastName,
         onChange: (event) => {
           setLastName(event.target.value)
         }
-      }
-    ],
-    [
+      },
       {
         type: 'number',
         name: 'Age',
+        lg: {span: 7, offset: 1},
         value: age,
         onChange: (value) => {
           setAge(value)
         }
       },
+    ],
+    [
+      {
+        type: 'date',
+        value: dob,
+        name: 'Date of Brith',
+        formate: ["MM-DD-YYYY", "MM-DD-YY"],
+        onChange: (event) => {
+          setDob(event)
+        }
+      },
       {
         type: 'textarea',
         name: 'Message',
+        placeholder: 'Enter Your Message',
         value: message,
         onChange: (event) => {
           setMessage(event.target.value)

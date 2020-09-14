@@ -76,7 +76,7 @@ export default App
 
 - [Text](#text)
 - [Password](#password)
-- Date
+- [Date](#date)
 - Number
 - Textarea
 - Upload
@@ -111,7 +111,6 @@ export default App
   fieldId: "my-id",                          // For custom css id's
   disabled: false                            // For disabling the field
   colClassName: "text-right",                // For Column Level styles
-  rowClassName: "mb-0",                      // For Row Level styles
   bottomElement: <label>Bottom Element</label>,
   /*
     Any JSX element that you may like at the bottom
@@ -147,11 +146,41 @@ export default App
   customLable: <label>Required</label>,      // For small labels on top
   disabled: false                            // For disabling the field
   colClassName: "text-right",                // For Column Level styles
-  rowClassName: "mb-0",                      // For Row Level styles
   bottomElement: <label>Bottom Element</label>,
   /*
     Any JSX element that you may like at the bottom
   */
+  lg: 24,
+  /*
+    lg: 1 to 24 or { span: 11, offset: 1 }
+    Just like antd grid System
+  */
+}
+```
+
+### Date
+
+```jsx
+{
+  type: 'date',
+  value: dob,                   //value = typeof(Date)
+  name: 'Date of Brith',
+  onChange: (event) => {
+    setDob(event)
+  }
+}
+```
+
+#### Optional Props (Date)
+
+```jsx
+{
+  placeholder: "MM-DD-YYYY",                 // For placeholders
+  fieldStyle: {fontSize: 12},                // For custom Style Injections
+  fieldClassName: "font-weight-bold",        // For custom css class injection
+  disabled: false                            // For disabling the field
+  colClassName: "text-right",                // For Column Level styles
+  formate: ["MM-DD-YYYY", "MM-DD-YY"],       // For Date Formate DEFAULT: ["DD/MM/YYYY", "DD/MM/YY"]
   lg: 24,
   /*
     lg: 1 to 24 or { span: 11, offset: 1 }
