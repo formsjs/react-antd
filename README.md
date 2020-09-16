@@ -77,8 +77,8 @@ export default App
 - [Text](#text)
 - [Password](#password)
 - [Date](#date)
-- Number
-- Textarea
+- [Number](#number)
+- [Textarea](#textarea)
 - Upload
 - Checkbox
 - Radio
@@ -181,6 +181,75 @@ export default App
   disabled: false                            // For disabling the field
   colClassName: "text-right",                // For Column Level styles
   formate: ["MM-DD-YYYY", "MM-DD-YY"],       // For Date Formate DEFAULT: ["DD/MM/YYYY", "DD/MM/YY"]
+  lg: 24,
+  /*
+    lg: 1 to 24 or { span: 11, offset: 1 }
+    Just like antd grid System
+  */
+}
+```
+
+### Number
+
+```jsx
+{
+  type: 'number',
+  value: count,
+  name: 'Number',
+  onChange: (value) => {
+    setCount(value)
+  }
+}
+```
+
+#### Optional Props (Number)
+
+```jsx
+{
+  placeholder: "Count",                      // For placeholders
+  fieldStyle: {fontSize: 12},                // For custom Style Injections
+  fieldClassName: "font-weight-bold",        // For custom css class injection
+  disabled: false                            // For disabling the field
+  colClassName: "text-right",                // For Column Level styles
+  min: 0,                                    // For Min value
+  max: 10,                                   // For max value
+  lg: 24,
+  /*
+    lg: 1 to 24 or { span: 11, offset: 1 }
+    Just like antd grid System
+  */
+}
+```
+
+### Textarea
+
+```jsx
+{
+  type: 'textarea',
+  name: 'Message',
+  value: message,
+  onChange: (event) => {
+    setMessage(event.target.value)
+  }
+}
+```
+
+#### Optional Props (Textarea)
+
+```jsx
+{
+  placeholder: "Message",                    // For placeholders
+  fieldStyle: {fontSize: 12},                // For custom Style Injections
+  fieldClassName: "font-weight-bold",        // For custom css class injection
+  customLable: <label>Required</label>,      // For small labels on top
+  fieldId: "my-id",                          // For custom css id's
+  disabled: false                            // For disabling the field
+  colClassName: "text-right",                // For Column Level styles
+  autoSize: true,                            // For Autosizing
+  bottomElement: <label>Bottom Element</label>,
+  /*
+    Any JSX element that you may like at the bottom
+  */
   lg: 24,
   /*
     lg: 1 to 24 or { span: 11, offset: 1 }

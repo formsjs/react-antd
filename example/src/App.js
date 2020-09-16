@@ -33,6 +33,8 @@ const App = () => {
         type: 'number',
         name: 'Age',
         lg: {span: 7, offset: 1},
+        min: 16,
+        max: 100,
         value: age,
         onChange: (value) => {
           setAge(value)

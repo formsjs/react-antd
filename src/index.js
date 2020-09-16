@@ -126,14 +126,25 @@ export const FormGenerator = (props) => {
   }
 
   if (type === "number") {
-    const { onChange, value, name, min, max, disabled } = props;
+    const {
+      onChange,
+      value,
+      name,
+      min,
+      max,
+      disabled,
+      placeholder,
+      fieldClassName,
+      fieldStyle
+    } = props;
     return (
       <React.Fragment>
         <Form.Item label={name}>
           <InputNumber
-            placeholder={name}
+            placeholder={placeholder ? placeholder : name}
             name={name}
-            className={"w-100"}
+            className={fieldClassName ? fieldClassName : "w-100"}
+            style={fieldStyle}
             min={min}
             type={type}
             max={max}
@@ -147,12 +158,28 @@ export const FormGenerator = (props) => {
   }
 
   if (type === "textarea") {
-    const { onChange, value, name, autoSize, placeholder } = props;
+    const {
+      onChange,
+      value,
+      name,
+      placeholder,
+      fieldStyle,
+      fieldClassName,
+      customLable,
+      fieldId,
+      disabled,
+      autoSize
+    } = props;
     return (
       <React.Fragment>
         <Form.Item label={name}>
+          {customLable}
           <TextArea
             value={value}
+            disabled={disabled}
+            style={fieldStyle}
+            className={fieldClassName}
+            id={fieldId}
             onChange={onChange}
             placeholder={placeholder}
             autoSize={autoSize}
@@ -168,14 +195,28 @@ export const FormGenerator = (props) => {
   }
 
   if (type === "upload") {
-    const { name, onRemove, onSelect } = props;
+    const {
+      name,
+      onRemove,
+      onSelect,
+      multiple,
+      previewFile,
+      onRemove,
+      onChange,
+      fieldClassName,
+      fieldId
+    } = props;
     return (
       <Form.Item label={name}>
         <Upload
           name={name}
-          multiple={false}
           onRemove={onRemove}
-          className="w-100 text-align-left"
+          onDownload={onDownload}
+          id={fieldId}
+          onChange={onChange}
+          multiple={multiple}
+          previewFile={previewFile}
+          className={fieldClassName ? fieldClassName : "w-100 text-align-left"}
           beforeUpload={onSelect}
         >
           <Button>
