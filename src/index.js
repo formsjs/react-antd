@@ -201,7 +201,6 @@ export const FormGenerator = (props) => {
       onSelect,
       multiple,
       previewFile,
-      onRemove,
       onChange,
       fieldClassName,
       fieldId
