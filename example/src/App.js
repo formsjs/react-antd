@@ -8,6 +8,15 @@ const App = () => {
   const [age, setAge] = useState(0)
   const [message, setMessage] = useState("")
   const [dob, setDob] = useState(new Date())
+  const [file, setFile] = useState(undefined)
+
+
+  const toBase64 = (file) => new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = error => reject(error);
+  });
 
   const script = [
     [
@@ -51,6 +60,18 @@ const App = () => {
           setDob(event)
         }
       },
+      {
+        type: 'upload',
+        name: 'File',
+        onRemove: (event) => {
+          setFile(undefined)
+        },
+        beforeUpload: async (event) => {
+          setFile(await toBase64(event))
+        }
+      }
+    ],
+    [
       {
         type: 'textarea',
         name: 'Message',

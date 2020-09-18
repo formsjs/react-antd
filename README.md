@@ -79,7 +79,7 @@ export default App
 - [Date](#date)
 - [Number](#number)
 - [Textarea](#textarea)
-- Upload
+- [Upload](#upload)
 - Checkbox
 - Radio
 - Select
@@ -250,6 +250,61 @@ export default App
   /*
     Any JSX element that you may like at the bottom
   */
+  lg: 24,
+  /*
+    lg: 1 to 24 or { span: 11, offset: 1 }
+    Just like antd grid System
+  */
+}
+```
+
+### Upload
+
+```jsx
+{
+  {
+    type: 'upload',
+    name: 'File',
+    onRemove: (event) => {
+      setFile(undefined)
+    },
+    beforeUpload: async (event) => {
+      setFile(await toBase64(event))
+    }
+  }
+}
+```
+
+#### Optional Props (Upload)
+
+```jsx
+const toBase64 = (file) => new Promise((resolve, reject) => {
+  const reader = new FileReader();
+  reader.readAsDataURL(file);
+  reader.onload = () => resolve(reader.result);
+  reader.onerror = error => reject(error);
+});
+
+{
+  placeholder: "File",                       // For placeholders
+  fieldStyle: {fontSize: 12},                // For custom Style Injections
+  fieldClassName: "font-weight-bold",        // For custom css class injection
+  fieldId: "my-id",                          // For custom css id's
+  disabled: false                            // For disabling the field
+  colClassName: "text-right",                // For Column Level styles
+  multiple: false,
+  accept: '.doc,.docx',
+  method: 'post',
+  action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
+  onRemove: (event) => {
+    setFile(undefined)
+  },
+  beforeUpload: async (event) => {
+    setFile(await toBase64(event))
+  },
+  onChange: (event) => {
+    console.log(event)
+  }
   lg: 24,
   /*
     lg: 1 to 24 or { span: 11, offset: 1 }

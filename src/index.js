@@ -14,6 +14,7 @@ import {
   Switch,
 } from "antd";
 import moment from 'moment';
+import { UploadOutlined } from '@ant-design/icons'
 import "antd/dist/antd.css";
 
 const { Dragger } = Upload;
@@ -198,25 +199,34 @@ export const FormGenerator = (props) => {
     const {
       name,
       onRemove,
-      onSelect,
+      beforeUpload,
       multiple,
-      previewFile,
       onChange,
       fieldClassName,
-      fieldId
+      onDownload,
+      listType,
+      fieldId,
+      accept,
+      action,
+      disabled,
+      method
     } = props;
     return (
       <Form.Item label={name}>
         <Upload
           name={name}
+          action={action}
+          method={method}
+          accept={accept}
           onRemove={onRemove}
+          listType={listType}
           onDownload={onDownload}
           id={fieldId}
+          disabled={disabled}
           onChange={onChange}
           multiple={multiple}
-          previewFile={previewFile}
           className={fieldClassName ? fieldClassName : "w-100 text-align-left"}
-          beforeUpload={onSelect}
+          beforeUpload={beforeUpload}
         >
           <Button>
             <UploadOutlined /> Upload
