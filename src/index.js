@@ -270,6 +270,7 @@ export const FormGenerator = (props) => {
           return (
             <Checkbox
               key={key}
+              disabled={cb.disabled}
               onChange={cb.onChange}
               checked={cb.checked === true || cb.checked === "Y" ? true : false}
             >
