@@ -80,7 +80,7 @@ export default App
 - [Number](#number)
 - [Textarea](#textarea)
 - [Upload](#upload)
-- Checkbox
+- [Checkbox](#checkbox)
 - Radio
 - Select
 - Boolean
@@ -315,6 +315,33 @@ const toBase64 = (file) => new Promise((resolve, reject) => {
   reader.onload = () => resolve(reader.result);
   reader.onerror = error => reject(error);
 });
+```
+
+### Checkbox
+
+```jsx
+{
+  type: 'checkbox',
+  name: 'Subjects',
+  checkboxList: [
+    {
+      name: 'OOP',                          //Optional
+      disabled: false,                      //Optional
+      checked: subjects.oop,
+      onChange: (event) => {
+        setSubjects({ ...subjects, oop: event.target.checked})
+      }
+    },
+    {
+      name: 'DSA',
+      disabled: false,
+      checked: subjects.dsa,
+      onChange: (event) => {
+        setSubjects({ ...subjects, dsa: event.target.checked})
+      }
+    }
+  ]
+}
 ```
 
 ## License
