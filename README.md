@@ -278,13 +278,6 @@ export default App
 #### Optional Props (Upload)
 
 ```jsx
-const toBase64 = (file) => new Promise((resolve, reject) => {
-  const reader = new FileReader();
-  reader.readAsDataURL(file);
-  reader.onload = () => resolve(reader.result);
-  reader.onerror = error => reject(error);
-});
-
 {
   placeholder: "File",                       // For placeholders
   fieldStyle: {fontSize: 12},                // For custom Style Injections
@@ -311,6 +304,17 @@ const toBase64 = (file) => new Promise((resolve, reject) => {
     Just like antd grid System
   */
 }
+```
+
+##### toBase64
+
+```jsx
+const toBase64 = (file) => new Promise((resolve, reject) => {
+  const reader = new FileReader();
+  reader.readAsDataURL(file);
+  reader.onload = () => resolve(reader.result);
+  reader.onerror = error => reject(error);
+});
 ```
 
 ## License
