@@ -9,6 +9,10 @@ const App = () => {
   const [message, setMessage] = useState("")
   const [dob, setDob] = useState(new Date())
   const [file, setFile] = useState(undefined)
+  const [subjects, setSubjects] = useState({
+    oop: false,
+    dsa: false
+  })
 
 
   const toBase64 = (file) => new Promise((resolve, reject) => {
@@ -80,6 +84,26 @@ const App = () => {
         onChange: (event) => {
           setMessage(event.target.value)
         }
+      },
+      {
+        type: 'checkbox',
+        name: 'Subjects',
+        checkboxList: [
+          {
+            name: 'OOP',
+            checked: subjects.oop,
+            onChange: (event) => {
+              setSubjects({ ...subjects, oop: event.target.checked})
+            }
+          },
+          {
+            name: 'DSA',
+            checked: subjects.dsa,
+            onChange: (event) => {
+              setSubjects({ ...subjects, dsa: event.target.checked})
+            }
+          }
+        ]
       }
     ]
   ]
